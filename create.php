@@ -1,11 +1,11 @@
 <?php
-include 'db.php';
+include 'connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $title = $_POST['title'];
-    $description = $_POST['description'];
+    $name = $_POST['name'];
+    $subject = $_POST['subject'];
 
-    $sql = "INSERT INTO tasks (title, description) VALUES ('$title', '$description')";
+    $sql = "INSERT INTO tasks (name, subject) VALUES ('$name', '$subject')";
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
     } else {
